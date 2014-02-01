@@ -12,16 +12,22 @@
  *= require_tree .
  */
 
+ #wrapper {
+  text-align: left; /* reset text alignment */ 
+  width: 960px; /* or a percentage, or whatever */ 
+  margin: 0 auto; /* for the other browsers */
+ }
+
  #banner {
-  background: #9c9;
-  padding: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
+  background: #000000;
+  *padding: 10px;
+  *border-bottom: 2px solid;
+  *font: small-caps 40px/40px "Times New Roman", serif;
   color: #282;
   text-align: center;
 
   img {
-    float: left;
+    float: center;
   }
 }
 
@@ -35,7 +41,7 @@
 }
 
 #columns {
-  background: #141;
+  background: black;
 
   #main {
     margin-left: 17em;
@@ -45,10 +51,11 @@
 
 //#START:side
   #side {
-    float: left;
-    padding: 1em 2em;
-    width: 13em;
-    background: #141;
+    float: top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    *width: 1em;
+    background: black;
 
     form, div {
       display: inline;
@@ -63,21 +70,35 @@
       color:     white;
 
       table {
-        border-top:    1px dotted #595;
-        border-bottom: 1px dotted #595;
-        margin-bottom: 10px;
+        border-top:    2px dotted red;
+        border-bottom: 2px dotted red;
+        *margin-bottom: 10px;
       }
     }
 
     ul {
-      padding: 0;
+       list-style-type:none;
+       *margin:0;
+       *padding:0;
+       *margin-left:400;
+       overflow:hidden;
+       background:black;
+       font-family: 'Oswald', sans-serif;
+       line-height:22px;
+
+
 
       li {
-        list-style: none;
+
+        float:right;
+
 
         a {
-          color: #bfb;
-          font-size: small;
+          margin: 0 20px 0 20px;
+          display:block;
+          width:auto;
+          color: red;
+          font-size: large;
         }
       }
     }
@@ -88,12 +109,12 @@
 //#START:form
 .depot_form {
   fieldset {
-    background: #efe;
+    background: white;
 
     legend {
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
+      color: black;
+      background: white;
+      font-family: 'Oswald', sans-serif;
       padding: 0.2em 1em;
     }
   }
@@ -121,4 +142,5 @@
     }
   }
 }
+
 //#END:form

@@ -8,12 +8,14 @@
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Oswald' rel='stylesheet' type='text/css'>
 </head>
 <!-- END:head -->
 <body class="<%= controller.controller_name %>">
+<div id="wrapper">
   <div id="banner">
-    <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= image_tag("bridgebanner.jpg") %>
+    <!--<%= @page_title || "The Labarum" %>-->
   </div>
   
   <div id="columns">
@@ -27,9 +29,12 @@
     <!-- END:hidden_div -->
 
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../news">Blog</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
+        <li><a href="http://www..../contact">CONTACT</a></li>
+        <li><a href="http://www..../news">SHOP</a></li>
+        <li><a href="http://www..../news">BLOG</a></li>
+        <li><a href="http://www..../news">COLLECTION</a></li>
+        <li><a href="http://www....">LABARUM</a></li>
+        <li><a href="http://www....">HOME</a></li>
       </ul>
 
       <% if session[:user_id] %>
@@ -45,5 +50,6 @@
       <%= yield %>
     </div>
   </div>
+</div>
 </body>
 </html>
