@@ -12,6 +12,11 @@
  *= require_tree .
  */
 
+@font-face {
+  font-family: bebasregular;
+  src: url('bebasregular.ttf');
+}
+
  #wrapper {
   text-align: left; /* reset text alignment */ 
   width: 960px; /* or a percentage, or whatever */ 
@@ -83,7 +88,8 @@
        *margin-left:400;
        overflow:hidden;
        background:black;
-       font-family: 'Oswald', sans-serif;
+       font-family: 'bebasregular';
+       *font-family: 'Oswald', sans-serif;
        line-height:22px;
 
 
@@ -94,7 +100,7 @@
 
 
         a {
-          margin: 0 20px 0 20px;
+          margin: 0 40px 0 40px;
           display:block;
           width:auto;
           color: red;
