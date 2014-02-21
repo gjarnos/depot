@@ -16,6 +16,18 @@
   font-family: bebasregular;
   src: url('bebasregular.ttf');
 }
+//edit here to fix cart
+#cart {
+      font-size: smaller;
+      color:     white;
+
+      table {
+        border-top:    2px dotted red;
+        border-bottom: 2px dotted red;
+        *margin-bottom: 10px;
+      }
+      }
+
 
  #wrapper {
   text-align: left; /* reset text alignment */ 
@@ -54,6 +66,7 @@
     background: white;
   }
 
+  
 //#START:side
   #side {
     float: top;
