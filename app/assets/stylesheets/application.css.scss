@@ -24,7 +24,7 @@
       right:230px;
       width:200px;
       font-size: smaller;
-      color:     black;
+      color:     white;
 
       table {
         border-top:    2px dotted red;
@@ -37,6 +37,20 @@
   text-align: left; /* reset text alignment */ 
   width: 960px; /* or a percentage, or whatever */ 
   margin: 0 auto; /* for the other browsers */
+ }
+
+ #footer{
+ border-top: 1px solid red;
+ width: 960px;
+ margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  h5{
+  font-family: 'bebasregular';
+  color: red;
+  font-size: 1.75em;
+  text-align: center;
+ }
  }
 
  #banner {
@@ -65,7 +79,7 @@
   background: black;
 
   #main {
-    margin-left: 17em;
+    *margin-left: 17em;
     padding: 1em;
     background: white;
   }
@@ -117,7 +131,7 @@
           display:block;
           width:auto;
           color: red;
-          font-size: 22px;
+          font-size: 1.75em;
           text-decoration:none;
         }
       }
