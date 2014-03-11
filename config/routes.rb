@@ -30,7 +30,7 @@ Depot::Application.routes.draw do
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  root 'store#index', as: 'store'
+  root 'home#index'#ß  , as: 'store'
   # ...
 
   # Example of regular route:
