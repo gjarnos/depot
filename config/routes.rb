@@ -20,6 +20,7 @@ Depot::Application.routes.draw do
   resources :orders
   resources :line_items
   resources :carts
+  get 'store' => 'store#index'
 
   get "store/index"
   resources :products do
@@ -30,7 +31,7 @@ Depot::Application.routes.draw do
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  root 'home#index'#ß  , as: 'store'
+  root 'home#index'#, as: 'store'
   # ...
 
   # Example of regular route:

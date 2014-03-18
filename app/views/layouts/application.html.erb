@@ -25,11 +25,11 @@
       </div>
       <ul>
         <li><%= link_to 'Sign Up', new_user_path %></li>
-        <li><a href="http://www..../news">STORE</a></li>
+        <li><%= link_to 'STORE', store_url %></li>
         <li><a href="http://www..../news">FILMS</a></li>
         <li><a href="http://www..../news">COLLECTION</a></li>
         <li><a href="http://www....">ABOUT</a></li>
-        <li><a href="http://www....">HOME</a></li>
+        <li><%= link_to 'Home', root_path %></li>
       </ul>
 
       <% if session[:user_id] %>
