@@ -5,6 +5,7 @@ describe 'user_signup_and_checkout' do
   it 'creates a new user and logs them in' do
     click_on 'STORE'
     expect(page).to have_content 'STORE'
+    binding.pry 
     within ".store" do
       click_on("Add to Cart", :match => :first)
     end
