@@ -1,2 +1,4 @@
 1. Limit routes to be ONLY what i need right now, add new ones later 
   A. Using: only: [:show, :create]
+
+2. Showing users on app/views/users/show.html.erb crashes.
