@@ -1,34 +1,60 @@
+
+<!-- START:head -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pragprog Books Online Store</title>
+  <title>The Labarum</title>
   <%= stylesheet_link_tag    "application", media: "all",
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Oswald' rel='stylesheet' type='text/css'>
 </head>
+<!-- END:head -->
 <body class="<%= controller.controller_name %>">
+<div id="wrapper">
   <div id="banner">
-    <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= image_tag("labarumbannercolored.jpg") %>
+    <!--<%= @page_title || "The Labarum" %>-->
   </div>
+  
   <div id="columns">
     <div id="side">
-      <% if @cart %>
-        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-          <%= render @cart %>
-        <% end %>
-      <% end %>
+      <div id="logo">
+        <%= image_tag("labarumlogofrontpage.jpg") %>
+      </div>
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
+        <li><%= link_to 'Sign Up', new_user_path %></li>
+        <li><%= link_to 'STORE', store_url %></li>
+        <li><a href="http://www..../news">FILMS</a></li>
+        <li><a href="http://www..../news">COLLECTION</a></li>
+        <li><a href="http://www....">ABOUT</a></li>
+        <li><%= link_to 'Home', root_path %></li>
       </ul>
+
+      <% if session[:user_id] %>
+        <ul>
+          <li><%= link_to 'Orders',   orders_path   %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users',    users_path    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
+      <% end %>
     </div>
     <div id="main">
       <%= yield %>
     </div>
   </div>
+</div>
+<!-- START:hidden_div -->
+  <% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+      <%= render @cart %>
+    <% end %>
+  <% end %>
+<!-- END:hidden_div -->
+<div id="footer">
+  <h5>LABARUM LLC. | 2014</h5>
+</div>
 </body>
 </html>
