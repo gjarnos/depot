@@ -28,8 +28,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to orders_url#,
+      if @user.save and @user.authenticate(user_params[:password])
+        session[:user_id] = @user.id # refactor ater
+        format.html { redirect_to new_order_url#,
           #notice: "User #{@user.name} was successfully created." 
         }
         #format.json { render action: 'show',
