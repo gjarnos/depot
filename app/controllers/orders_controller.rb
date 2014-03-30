@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
-      if @order.save
+      if @order.process_and_save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver

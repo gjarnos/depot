@@ -2,3 +2,11 @@
   A. Using: only: [:show, :create]
 
 2. Showing users on app/views/users/show.html.erb crashes.
+
+3. Refactor Authorize so that we stop repeating ourself.  We need a method to add session[:user_id]
+	A. users_controller
+	B. sessions_controller
+
+4. Confirmation Page and subtotal page
+
+5. Use an ACTUAL address

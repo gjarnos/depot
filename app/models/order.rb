@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  #attr_accessor :credit_card_number, :credit_card_security_code, :credit_card_expiration
+
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
   has_many :line_items, dependent: :destroy
   # ...
@@ -9,5 +11,9 @@ class Order < ActiveRecord::Base
       item.cart_id = nil
       line_items << item
     end
+  end
+
+  def process_and_save
+    save
   end
 end

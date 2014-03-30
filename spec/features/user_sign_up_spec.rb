@@ -21,8 +21,16 @@ describe 'user_signup_and_checkout' do
     fill_in "Password", with: "Always payes his debts"
     fill_in "Confirm", with: "Always payes his debts"
     click_on('Create User')
-    binding.pry
     expect(page).to have_content 'Checkout'
+    fill_in "Name", with: "Samwell Tarly"
+    fill_in "Address", with: "1 Kingsroad Way, Tower Black, The Wall"
+    fill_in "Email", with: "fatass@tubbylane.com"
+    select "Credit card", from: "order_pay_type"
+    fill_in "Credit card number", with: "1111222233334444"
+    fill_in "Credit card security code", with: "123"
+    fill_in "Credit card expiration", with: "05/16"
+
+    click_on "Place Order"
     binding.pry
     #fill_in "Name", with: "Tyrion Lannister"
     #fill_in "Password", with: "Always payes his dets"
