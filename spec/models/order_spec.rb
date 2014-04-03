@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe Order do
@@ -15,3 +16,4 @@ describe Order do
     end
   end
 end
+=end

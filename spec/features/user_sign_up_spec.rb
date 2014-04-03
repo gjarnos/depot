@@ -25,11 +25,10 @@ describe 'user_signup_and_checkout' do
     fill_in "Name", with: "Samwell Tarly"
     fill_in "Address", with: "1 Kingsroad Way, Tower Black, The Wall"
     fill_in "Email", with: "fatass@tubbylane.com"
-    select "Credit card", from: "order_pay_type"
-    fill_in "Credit card number", with: "1111222233334444"
-    fill_in "Credit card security code", with: "123"
-    fill_in "Credit card expiration", with: "05/16"
-
+    fill_in "Credit Card Number", with: "1111222233334444"
+    fill_in "Security Code on Card (CVV)", with: "123"
+    fill_in "Card Expiration", with: "05/16"
+    binding.pry
     click_on "Place Order"
     binding.pry
     #fill_in "Name", with: "Tyrion Lannister"

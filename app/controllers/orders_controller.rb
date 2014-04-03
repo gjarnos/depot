@@ -34,9 +34,11 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
-
+    @order[:total_price] = @cart.total_price
+    
+    
     respond_to do |format|
-      if @order.process_and_save
+      if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
@@ -85,7 +87,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :address, :email, :total_price)
     end
   #...
 end
