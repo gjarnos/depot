@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+#stripe and stuff
+gem 'stripe'
+
 #ya know, cleans the daterburst
 gem 'database_cleaner'
 
@@ -42,6 +45,10 @@ group :test do
   gem 'capybara'
   gem 'pry'
   gem 'launchy'
+end
+
+group :dev, :test do
+  gem 'pry'
 end
 
 #for test data
