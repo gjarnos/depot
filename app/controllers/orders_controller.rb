@@ -17,11 +17,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    #binding.pry
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Your cart is empty"
       return
     end
-    
+    #binding.pry
     @order = Order.new
   end
 
@@ -78,14 +79,6 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def confirm
-  @order = Order.new(params[:order])
-  unless @order.valid?
-    render action: 'new'
-  else       
-  end
-end
 
   private
     # Use callbacks to share common setup or constraints between actions.

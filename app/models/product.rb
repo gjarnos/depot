@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
 # 
   validates :title, uniqueness: true
-  validates :image_url, allow_blank: true, format: {
+  validates :image_url, :image_url2, allow_blank: true, format: {
     with:    %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
@@ -17,6 +17,11 @@ class Product < ActiveRecord::Base
   def self.latest
     Product.order(:updated_at).last
   end
+
+  def subtract_quantity
+
+  end
+  
   private
 
     # ensure that there are no line items referencing this product
@@ -28,4 +33,5 @@ class Product < ActiveRecord::Base
         return false
       end
     end
+
 end

@@ -22,6 +22,7 @@ describe 'user_signup_and_checkout' do
     fill_in "Confirm", with: "Always payes his debts"
     click_on('Create User')
     expect(page).to have_content 'Checkout'
+    binding.pry
     fill_in "Name", with: "Samwell Tarly"
     fill_in "Address", with: "1 Kingsroad Way, Tower Black, The Wall"
     fill_in "Email", with: "fatass@tubbylane.com"
