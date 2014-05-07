@@ -13,6 +13,8 @@ class Cart < ActiveRecord::Base
 
   def total_price
     line_items.to_a.sum { |item| item.total_price }
-    
+  end
+  def total_price_and_shipping
+    line_items.to_a.sum { |item| item.total_price } + Constants::SHIPPING_COSTS
   end
 end

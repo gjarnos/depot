@@ -1,4 +1,22 @@
 <div class="depot_form">
+  <% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, id: 'cart1') do %>
+      <h2>Your Cart</h2>
+        <table>
+          <%= render(@cart.line_items) %>
+          <tr class="Shipping">
+            <td colspan="2">Shipping</td>
+            <td class="shipping_cell">
+              <%= number_to_currency(Constants::SHIPPING_COSTS) %></td>
+          </tr>
+          <tr class="total_line">
+            <td colspan="2">Total</td>
+            <td class="total_cell"><%= number_to_currency(@cart.total_price_and_shipping) %></td>
+          </tr>
+        </table>
+    <% end %>
+  <% end %>
+
   <fieldset>
     <legend>Checkout - Please enter your details</legend>
     <%= render 'form' %>
