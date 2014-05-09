@@ -52,7 +52,7 @@ group :test do
   gem 'launchy'
 end
 
-group :dev, :test do
+group :dev do
   gem 'pry'
 end
 
