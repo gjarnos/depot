@@ -16,13 +16,11 @@ class Order < ActiveRecord::Base
   end
 
   def total_price
-    line_items.collect{|x| x.total_price}.inject(:+)
+    line_items.collect{|x| x.total_price}.inject(:+) + Constants::SHIPPING_COSTS
   end
 
   def process_and_save
-binding.pry
     if valid?
-binding.pry
       charge = Stripe::Charge.create(description: email, amount: (total_price * 100).to_i, card: stripe_card_token, currency: 'usd')
       self.stripe_charge_token = charge.id
       save!

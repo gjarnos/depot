@@ -17,13 +17,11 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-#binding.pry
     if @cart.line_items.empty?
-#binding.pry
       redirect_to store_url, notice: "Your cart is empty"
       return
     end
-#binding.pry
+
     @order = Order.new
   end
 
@@ -34,17 +32,12 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-binding.pry
     @order = Order.new(order_params)
-binding.pry
     @order.add_line_items_from_cart(@cart)
-binding.pry
     @order[:total_price] = @cart.total_price
-binding.pry
+    
     respond_to do |format|
-binding.pry
       if @order.process_and_save
-binding.pry
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
