@@ -47,7 +47,8 @@
   margin-right:auto;
   margin-top:20px;
   h5{
-  font-family: 'bebasregular';
+  #font-family: 'bebasregular';
+  font-family: 'Oswald', sans-serif;
   color: red;
   font-size: 1.75em;
   text-align: center;
@@ -121,14 +122,14 @@
        line-height:26px;
        width:600px;
        position:relative;
-       right:-60px;
+       right:-47px;
 
       li {
 
         float:right;
 
         a {
-          margin: 0 30px 0 30px;
+          margin: 0 16px 0 16px;
           display:block;
           width:auto;
           color: red;
