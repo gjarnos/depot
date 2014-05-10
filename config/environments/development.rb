@@ -37,4 +37,7 @@ Depot::Application.configure do
     password: "Zqxwcevrbtny7",
     enable_starttls_auto: true
   }
+
+  #config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
 end
