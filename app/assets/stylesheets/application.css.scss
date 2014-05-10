@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: bebasregular;
-  src: url('bebasregular.ttf');
+  src: font-url('bebasregular.ttf');
 }
 
 //edit here to fix cart
@@ -47,9 +47,10 @@
   margin-right:auto;
   margin-top:20px;
   line-height:26px;
+  font-size: 1.3em;
   p{
-  *font-family: 'bebasregular';
-  font-family: 'Oswald', sans-serif;
+  font-family: 'bebasregular';
+  *font-family: 'Oswald', sans-serif;
   color: red;
   font-size: 1.75em;
   text-align: center;
@@ -118,19 +119,20 @@
        *margin-left:400;
        overflow:hidden;
        background:black;
-       *font-family: 'bebasregular';
-       font-family: 'Oswald', sans-serif;
+       font-family: 'bebasregular';
+       *font-family: 'Oswald', sans-serif;
        line-height:26px;
        width:600px;
        position:relative;
        right:-47px;
+       font-size: 1.3em;
 
       li {
 
         float:right;
 
         a {
-          margin: 0 16px 0 16px;
+          margin: 5px 16px 0 16px;
           display:block;
           width:auto;
           color: red;
