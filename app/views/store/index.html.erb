@@ -4,6 +4,15 @@
 
 <h1>SHOP</h1>
 
+
+<a class="grouped_elements" rel="group1" href="blackmail1.jpg"><img src="blackmail1.jpg" alt=""/></a>
+<a class="grouped_elements" rel="group1" href="blackmail1.jpg"><img src="blackmail1.jpg" alt=""/></a>   
+
+<%=link_to ("blackmail1.jpg"), :class => 'fancyframe', :rel => 'group' do %>
+   <div class="grouped_elements"> <%= image_tag("blackmail1.jpg") %></div>
+<% end %>
+
+
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>

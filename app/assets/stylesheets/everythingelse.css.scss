@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'bebasregular';
+  src: asset-url('bebasregular.ttf');
+}
+
+//edit here to fix cart
+#cart {
+      position:absolute;
+      height:200px;
+      top:188px;
+      right:230px;
+      width:200px;
+      font-size: smaller;
+      color:     white;
+
+      table {
+        border-top:    2px dotted red;
+        border-bottom: 2px dotted red;
+        *margin-bottom: 10px;
+      }
+      }
+
+ #wrapper {
+  text-align: left; /* reset text alignment */ 
+  width: 960px; /* or a percentage, or whatever */ 
+  margin: 0 auto; /* for the other browsers */
+ }
+
+ #footer{
+ border-top: 1px solid red;
+ width: 960px;
+ margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  line-height:26px;
+  font-size: 1.3em;
+  p{
+  font-family: 'bebasregular';
+  *font-family: 'Oswald', sans-serif;
+  color: red;
+  font-size: 1.75em;
+  text-align: center;
+ }
+ }
+
+ #banner {
+  background: #000000;
+  *padding: 10px;
+  *border-bottom: 2px solid;
+  *font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+
+  img {
+    float: center;
+  }
+}
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  background: black;
+
+  #main {
+    *margin-left: 17em;
+    *padding: 1em;
+    background: white;
+  }
+  
+//#START:side
+  #side {
+    float: top;
+    padding-top: 1px;
+    margin-bottom: 20px;
+    width: 960px;
+    background: black;
+    border-bottom: 1px solid red;
+
+    #logo{
+    
+    img{
+      float:left;
+    }  
+    }
+
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    ul {
+       list-style-type:none;
+       *margin:0;
+       *padding:0;
+       *margin-left:400;
+       overflow:hidden;
+       background:black;
+       font-family: 'bebasregular';
+       *font-family: 'Oswald', sans-serif;
+       line-height:26px;
+       width:600px;
+       position:relative;
+       right:-47px;
+       font-size: 1.3em;
+
+      li {
+
+        float:right;
+
+        a {
+          margin: 5px 16px 0 16px;
+          display:block;
+          width:auto;
+          color: red;
+          font-size: 1.75em;
+          text-decoration:none;
+          outline : none;
+        }
+      }
+    }
+  }
+//#END:side
+}
+
+//#START:form
+.depot_form {
+  fieldset {
+    background: white;
+
+    legend {
+      color: black;
+      background: white;
+      font-family: 'Oswald', sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+
+    br {
+      display: none
+    }
+  }
+}
