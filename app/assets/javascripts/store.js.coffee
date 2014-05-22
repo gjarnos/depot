@@ -6,5 +6,4 @@
     #$(this).parent().find(':submit').click()
 
 jQuery ->
-  $("a.grouped_elements").fancybox();
- #$("a#single_image").fancybox
+  $("a.box").fancybox();

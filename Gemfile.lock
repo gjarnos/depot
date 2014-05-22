@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/greinacker/fancybox-rails.git
+  revision: 97f726cc94dd53be9837a54c1de1dbb6f397e0fd
+  branch: rails4
+  specs:
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,8 +60,6 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    fancybox-rails (0.2.1)
-      railties (>= 3.1.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -166,7 +172,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
-  fancybox-rails
+  fancybox-rails!
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
