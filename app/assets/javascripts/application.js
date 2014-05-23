@@ -14,7 +14,7 @@
 //= require fancybox
 //= require jquery.ui.effect-blind
 //= require jquery_ujs
-//= require jquery.js
+
 //= require jquery.jcarousel.min.js
 //= require jcarousel.basic.js
 //= require_tree .
