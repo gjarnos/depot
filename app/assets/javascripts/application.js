@@ -17,4 +17,11 @@
 //= require jquery.js
 //= require jquery.jcarousel.min.js
 //= require jcarousel.basic.js
-//= require_tree .
+//= require admin
+//= require carts
+//= require line_items
+//= require orders
+//= require products
+//= require sessions
+//= require store
+//= require users
