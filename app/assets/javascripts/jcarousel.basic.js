@@ -1,6 +1,8 @@
-(function($) {
-    $(function() {
-
+//(function($) {
+    //$(function() {
+        
+$(window).load(function(){
+    $(document).ready(function(){
 
         $('.jcarousel').jcarousel();
 
