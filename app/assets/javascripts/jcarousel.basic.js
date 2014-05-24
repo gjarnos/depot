@@ -1,5 +1,5 @@
--(function($) {
- -    $(function() {
+(function($) {
+    $(function() {
 
 
         $('.jcarousel').jcarousel();
