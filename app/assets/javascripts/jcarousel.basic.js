@@ -1,5 +1,7 @@
-(function($) {
-    $(function() {
+$(window).load(function(){
+    $(document).ready(function(){
+
+
         $('.jcarousel').jcarousel();
 
         $('.jcarousel-control-prev')
@@ -33,4 +35,7 @@
             })
             .jcarouselPagination();
     });
-})(jQuery);
+})
+
+
+(jQuery);
