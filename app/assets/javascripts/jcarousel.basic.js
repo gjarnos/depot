@@ -1,5 +1,5 @@
-$(window).load(function(){
-    $(document).ready(function(){
+-(function($) {
+ -    $(function() {
 
 
         $('.jcarousel').jcarousel();
@@ -35,7 +35,4 @@ $(window).load(function(){
             })
             .jcarouselPagination();
     });
-})
-
-
-(jQuery);
+})(jQuery);
