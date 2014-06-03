@@ -14,7 +14,7 @@
 
   <%= f.hidden_field :stripe_card_token %>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name, size: 40 %>
   </div>
@@ -26,6 +26,7 @@
     <%= f.label :email %><br>
     <%= f.email_field :email, size: 40 %>
   </div>
+  
     <% if @order.stripe_card_token.present? %>
         Credit card has been provided.
     <% else %>
@@ -43,12 +44,12 @@
           <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
         </div>
     <% end %>
-<%= f.submit 'Place Order' %>
-    <%= hidden_div_confirm(@order.valid?, id: 'actions') do %>
-     
-     <input name="commit" type="submit" value="Save changes" />
+
+  <%= f.submit 'Place Order' %>
+  <%= hidden_div_confirm(@order.valid?, id: 'actions') do %>
+    <input name="commit" type="submit" value="Save changes" />
   <% end %>
- 
+
 <%  end %>
 
 
