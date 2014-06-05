@@ -40,9 +40,14 @@
     <%= f.text_field :color %>
   </div>
 
-  <div class="field">
-    <%= collection_select :clothing_size, :clothing_size_id, ClothingSize.all, :id, :sizes, :selected => :id %>
-  </div>
+  <%= f.fields_for(:categorizations) do |cat_form| %>
+    <%= cat_form.fields_for(:clothing_size) do |size_form| %>
+      <div class="field">
+        <%= size_form.label :sizes %><br>
+        <%= size_form.text_field :sizes %>
+      </div>
+    <% end %>
+  <% end %>
   
   <%= f.submit 'Save Product'%>
  

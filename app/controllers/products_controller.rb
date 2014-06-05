@@ -22,7 +22,9 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+  @product = Product.new
+  
+
   end
 
   # GET /products/1/edit
@@ -35,6 +37,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     respond_to do |format|
+     @product.categorizations.build(product_id: product_id).build_clothing_sizes
+
       if @product.save
         format.html { redirect_to @product,
           notice: 'Product was successfully created.' }
