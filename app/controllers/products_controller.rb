@@ -23,7 +23,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
   @product = Product.new
-  
+  @product.clothing_sizes.build
+  @product.categorizations.build
 
   end
 
@@ -37,7 +38,6 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     respond_to do |format|
-     @product.categorizations.build(product_id: product_id).build_clothing_sizes
 
       if @product.save
         format.html { redirect_to @product,
@@ -97,6 +97,6 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white
     # list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :image_url2, :price, :quantity, :color, :sizes)
+      params.require(:product).permit(:title, :description, :image_url, :image_url2, :price, :quantity, :color, :clothing_sizes_attributes => [:sizes, :clothing_size_id])
     end
 end
