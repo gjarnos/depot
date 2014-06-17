@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    
     respond_to do |format|
 
       if @product.save
@@ -97,6 +97,6 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white
     # list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :image_url2, :price, :quantity, :color, :clothing_sizes_attributes => [:sizes, :clothing_size_id])
+      params.require(:product).permit(:title, :description, :image_url, :image_url2, :price, :quantity, :color, :clothing_sizes_attributes => [:sizes, :clothing_size_id], :categorizations_attributes => [:clothing_size_id, :product_id])
     end
 end

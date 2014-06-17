@@ -39,17 +39,13 @@
     <%= f.label :color %><br>
     <%= f.text_field :color %>
   </div>
-
   
-    <%= f.fields_for :clothing_sizes do |cs| %>
-        <div class="field">
-          <%= cs.label :sizes, "Sizes" %><br>
-            <%= cs.text_field :sizes  %>
-        </div>
+    <%= f.fields_for :categorizations do |cat| %>
+      <div class="field">
+        <%= cat.collection_select :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"}  %>
+      </div>
     <% end %>
-  
-  
+
   <%= f.submit 'Save Product'%>
- 
 
 <% end %>

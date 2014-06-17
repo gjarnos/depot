@@ -1,8 +1,10 @@
+require 'pry'
+
 class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
-  has_many :categorizations#, inverse_of: :product
+  has_many :categorizations, dependent: :destroy
   has_many :clothing_sizes, through: :categorizations
 
   accepts_nested_attributes_for :categorizations
