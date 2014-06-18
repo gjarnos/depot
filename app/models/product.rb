@@ -28,6 +28,11 @@ class Product < ActiveRecord::Base
     Product.order(:updated_at).last
   end
 
+  def save
+    binding.pry
+    super
+  end
+
   def subtract_quantity
   end
   
