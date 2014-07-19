@@ -7,10 +7,10 @@ class Product < ActiveRecord::Base
   has_many :categorizations, dependent: :destroy
   has_many :clothing_sizes, through: :categorizations
 
-  accepts_nested_attributes_for :categorizations
-  accepts_nested_attributes_for :clothing_sizes
+  #accepts_nested_attributes_for :categorizations
+  #accepts_nested_attributes_for :clothing_sizes
 
-  #attr_accessor :name, :clothing_size_id
+  #attr_accessor :categorizations_attributes
 
   before_destroy :ensure_not_referenced_by_any_line_item
 

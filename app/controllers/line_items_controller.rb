@@ -17,7 +17,11 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/new
   def new
+    #binding.pry
     @line_item = LineItem.new
+    #@line_item.clothing_size.build
+
+    
   end
 
   # GET /line_items/1/edit
@@ -27,8 +31,13 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    binding.pry
+    #product = Product.find(params[:line_item][:product_id])
+    @line_item = @cart.add_product(params[:line_item][:product_id], params[:line_item][:clothing_size_id])
+
+    #clothing_size = ClothingSize.find(params[:clothing_size_id])
+    #binding.pry
+    #@line_item.clothing_size_id = 3
 
     respond_to do |format|
       if @line_item.save
@@ -74,6 +83,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:product_id)
+      params.require(:line_item).permit(:product_id, :clothing_size_id)
     end
 end

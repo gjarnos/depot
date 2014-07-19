@@ -15,10 +15,20 @@
         <h4><%= sanitize(product.description) %><h4>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= collection_select :product, :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"}  %>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+          <%= form_for(LineItem.new) do |f| %>
+
+
+            <%= f.collection_select :clothing_size_id, ClothingSize.joins(:categorizations).where(categorizations: {product: product}), :id, :sizes, {prompt: "Size"}  %>
+
+            <%= f.hidden_field :product_id, value: product.id %>
+
+            <%= f.submit 'Add to Cart' %>
+
+          <% end %>
         </div>
       </div>
     <% end %>
   <% end %>
 <% end %>
+
+

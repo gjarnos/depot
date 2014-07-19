@@ -40,11 +40,7 @@
     <%= f.text_field :color %>
   </div>
   
-    <%= f.fields_for :categorizations do |cat| %>
-      <div class="field">
-        <%= cat.collection_select :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"}  %>
-      </div>
-    <% end %>
+  <%= f.collection_check_boxes :clothing_size_ids, ClothingSize.all, :id, :sizes, {prompt: "Size"} %>
 
   <%= f.submit 'Save Product'%>
 

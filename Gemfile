@@ -61,7 +61,8 @@ group :test do
 end
 
 group :dev do
-  gem 'pry'
+  gem 'pry-byebug'
+  gem 'hirb'
 end
 
 #for test data
