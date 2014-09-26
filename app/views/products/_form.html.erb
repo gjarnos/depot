@@ -32,15 +32,22 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :quantity %><br>
-    <%= f.text_field :quantity %>
-  </div>
-  <div class="field">
     <%= f.label :color %><br>
     <%= f.text_field :color %>
   </div>
   
-  <%= f.collection_check_boxes :clothing_size_ids, ClothingSize.all, :id, :sizes, {prompt: "Size"} %>
+
+
+<%= f.fields_for :categorizations do |cat| %>
+    <div class="field">
+      <%= cat.label :quantity, "Quantity" %><br>
+      <%= cat.text_field :quantity  %>
+      <%= cat.collection_select :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"} %>
+    </div>
+
+  <% end %>
+
+
 
   <%= f.submit 'Save Product'%>
 

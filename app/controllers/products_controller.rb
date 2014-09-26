@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @product.categorizations.build
+    @categorization = @product.categorizations.build
   end
 
   # GET /products/1/edit
@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     respond_to do |format|
-
       if @product.save
         format.html { redirect_to @product,
           notice: 'Product was successfully created.' }
@@ -96,7 +95,9 @@ class ProductsController < ApplicationController
     # list through.
     def product_params
       params.require(:product).permit(:title, :description, :image_url, 
-        :image_url2, :price, :quantity, :color,
-        {:clothing_size_ids => []})
+        :image_url2, :price, :color,
+      
+        
+        categorizations_attributes: [:quantity, :categorization_id, :clothing_size_id])
     end
 end

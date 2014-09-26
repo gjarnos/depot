@@ -5,18 +5,6 @@ class Order < ActiveRecord::Base
   
   attr_accessor :stripe_card_token
 
-  attr_writer :stripe_card_token
-
-  def stripe_card_token=(blah)
-    @stripe_card_token=blah
-  end
-
-  attr_reader :stripe_card_token
-
-  def stripe_card_token
-    @stripe_card_token
-  end
-
   validates :name, :address, :email, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 

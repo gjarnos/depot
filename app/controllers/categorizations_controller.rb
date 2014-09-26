@@ -4,7 +4,6 @@ class CategorizationsController < ApplicationController
   # GET /categorizations
   # GET /categorizations.json
   def index
-    binding.pry
     @categorizations = Categorization.all
   end
 

@@ -17,11 +17,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/new
   def new
-    #binding.pry
     @line_item = LineItem.new
-    #@line_item.clothing_size.build
-
-    
   end
 
   # GET /line_items/1/edit
@@ -31,13 +27,7 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    binding.pry
-    #product = Product.find(params[:line_item][:product_id])
     @line_item = @cart.add_product(params[:line_item][:product_id], params[:line_item][:clothing_size_id])
-
-    #clothing_size = ClothingSize.find(params[:clothing_size_id])
-    #binding.pry
-    #@line_item.clothing_size_id = 3
 
     respond_to do |format|
       if @line_item.save
