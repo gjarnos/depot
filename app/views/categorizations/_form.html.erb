@@ -1,0 +1,35 @@
+<%= form_for(@categorization) do |f| %>
+  <% if @categorization.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@categorization.errors.count, "error") %> prohibited this categorization from being saved:</h2>
+
+      <ul>
+      <% @categorization.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+     <%= f.collection_select :product_id, Product.all, :id, :title, {prompt: "product id"} %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"} %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :clothing_color_id, ClothingColor.all, :id, :shirt_color, {prompt: "Color"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

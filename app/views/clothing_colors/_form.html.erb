@@ -1,0 +1,23 @@
+<%= form_for(@clothing_color) do |f| %>
+  <% if @clothing_color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing_color.errors.count, "error") %> prohibited this clothing_color from being saved:</h2>
+
+      <ul>
+      <% @clothing_color.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shirt_color %><br>
+    <%= f.text_field :shirt_color %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

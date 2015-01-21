@@ -19,6 +19,14 @@ class Order < ActiveRecord::Base
     line_items.collect{|x| x.total_price}.inject(:+) + Constants::SHIPPING_COSTS
   end
 
+  def subtract_bought_quantity(order)
+    order.line_items.each do |item| 
+      category_item = Categorization.where(product_id: item.product_id).first
+      new_quantity = category_item.quantity - item.quantity
+      category_item.update_attribute(:quantity, new_quantity)
+    end
+  end
+
   def process_and_save
     if valid?
       charge = Stripe::Charge.create(description: email, amount: (total_price * 100).to_i, card: stripe_card_token, currency: 'usd')

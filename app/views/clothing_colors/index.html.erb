@@ -1,0 +1,22 @@
+<h1>Listing clothing colors</h1>
+
+<table>
+<% @clothing_colors.each do |clothing_color| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    
+    <td class="list_description">
+      <dl>
+        <dt><%= clothing_color.shirt_color %></dt>
+      </dl>
+    </td>
+    <td class="list_actions">
+      <%= link_to 'Show', clothing_color %><br/>
+      <%= link_to 'Edit', edit_clothing_color_path(clothing_color) %><br/>
+      <%= link_to 'Destroy', clothing_color, method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New clothing color', new_clothing_color_path %>

@@ -35,9 +35,11 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
     @order[:total_price] = @cart.total_price
+    
 
     respond_to do |format|
       if @order.process_and_save
+        @order.subtract_bought_quantity(@order)
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver

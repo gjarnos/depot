@@ -21,6 +21,7 @@ Depot::Application.routes.draw do
   resources :line_items
   resources :carts
   resources :clothing_sizes
+  resources :clothing_colors
   resources :categorizations
   get 'store' => 'store#index'
 

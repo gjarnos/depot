@@ -25,7 +25,7 @@ class ClothingSizesController < ApplicationController
   # POST /clothing_sizes
   # POST /clothing_sizes.json
   def create
-   @clothing_size = ClothingSize.new(clothing_size_params)
+    @clothing_size = ClothingSize.new(clothing_size_params)
 
     respond_to do |format|
       if @clothing_size.save
@@ -44,7 +44,6 @@ class ClothingSizesController < ApplicationController
   # PATCH/PUT /clothing_sizes/1
   # PATCH/PUT /clothing_sizes/1.json
   def update
-
     respond_to do |format|
       if @clothing_size.update(clothing_size_params)
         format.html { redirect_to @clothing_size,
@@ -67,7 +66,6 @@ class ClothingSizesController < ApplicationController
       format.html { redirect_to clothing_sizes_url }
       format.json { head :no_content }
     end
-
   end
 
 private

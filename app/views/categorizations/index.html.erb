@@ -1,0 +1,53 @@
+<h1>Listing categories</h1>
+
+<table>
+<% @categorizations.each do |categorization| %>
+<th>product id</th>
+<th>Clothing Color id</th>
+<th>Clothing Size id</th>
+<th>Created at</th>
+<th>Updated at</th>
+<th>Quantity</th>
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td class="list_product_id">
+      <dl>
+        <dt><%= categorization.product_id %></dt>
+      </dl>
+    </td>
+    <td class="list_clothing_color_id">
+      <dl>
+        <dt><%= categorization.clothing_color_id %></dt>
+      </dl>
+    </td>
+    <td class="list_clothing_size_id">
+      <dl>
+        <dt><%= categorization.clothing_size_id %></dt>
+      </dl>
+    </td>
+    <td class="list_created_at">
+      <dl>
+        <dt><%= categorization.created_at %></dt>
+      </dl>
+    </td>
+    <td class="list_updated_at">
+      <dl>
+        <dt><%= categorization.updated_at %></dt>
+      </dl>
+    </td>
+    <td class="list_quantity">
+      <dl>
+        <dt><%= categorization.quantity %></dt>
+      </dl>
+    </td>
+    <td class="list_actions">
+      <%= link_to 'Show', categorization %><br/>
+      <%= link_to 'Edit', edit_categorization_path(categorization) %><br/>
+      <%= link_to 'Destroy', categorization, method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New category', new_categorization_path %>
