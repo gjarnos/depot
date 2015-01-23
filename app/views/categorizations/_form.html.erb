@@ -16,11 +16,15 @@
   </div>
 
   <div class="field">
-    <%= f.collection_select :clothing_size_id, ClothingSize.all, :id, :sizes, {prompt: "Size"} %>
+    <%= f.collection_select :clothing_size_id, ClothingSize.all, :id, :shirt_size, {prompt: "Size"} %>
   </div>
 
   <div class="field">
     <%= f.collection_select :clothing_color_id, ClothingColor.all, :id, :shirt_color, {prompt: "Color"} %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :clothing_image_id, ClothingImage.all, :id, :shirt_image_front, {prompt: "Image"} %>
   </div>
 
   <div class="field">

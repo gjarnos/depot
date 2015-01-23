@@ -17,7 +17,7 @@
           <span class="price"><%= number_to_currency(product.price) %></span>
           <%= form_for(LineItem.new) do |f| %>
 
-            <%= f.collection_select :clothing_size_id, ClothingSize.joins(:categorizations).where(categorizations: {product: product}), :id, :sizes %>
+            <%= f.collection_select :clothing_size_id, ClothingSize.joins(:categorizations).where(categorizations: {product: product}), :id, :shirt_size %>
 
             <%= f.hidden_field :product_id, value: product.id %>
 

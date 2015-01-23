@@ -75,6 +75,6 @@ private
   end
 
   def clothing_size_params
-    params.require(:clothing_size).permit(:sizes)
+    params.require(:clothing_size).permit(:shirt_size)
   end
 end
