@@ -3,15 +3,23 @@
 
 <p>
   <strong>Product id:</strong>
-  <%= @categorization.product_id %>
+  <%= @categorization.product.title %>
 </p>
 <p>
   <strong>Clothing color id:</strong>
-  <%= @categorization.clothing_color_id %>
+  <%= @categorization.clothing_color.shirt_color %>
 </p>
 <p>
   <strong>Clothing size id:</strong>
-  <%= @categorization.clothing_size_id %>
+  <%= @categorization.clothing_size.shirt_size %>
+</p>
+<p>
+  <strong>Shirt image front:</strong>
+  <%= @categorization.shirt_image_front %>
+</p>
+<p>
+  <strong>Shirt image back:</strong>
+  <%= @categorization.shirt_image_back %>
 </p>
 <p>
   <strong>Quantity:</strong>

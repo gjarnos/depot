@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
 
   has_many :categorizations, dependent: :destroy
   has_many :clothing_sizes, through: :categorizations
+  has_many :clothing_colors, through: :categorizations
 
   accepts_nested_attributes_for :categorizations
 
