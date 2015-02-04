@@ -1,3 +1,5 @@
+<%= cloudinary_js_config %>
+
 <%= form_for(@clothing_image) do |f| %>
   <% if @clothing_image.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +14,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :image_name %><br>
-    <%= f.text_field :image_name %>
+    <%= f.label :image_title %><br>
+    <%= f.text_field :image_title %>
   </div>
-  
+
+  <div class="field" name="file">
+    <%= f.label :image_key %><br>
+    <%= f.cl_image_upload(:image_key) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= cl_image_tag("parrg1znip63rr6h1jxa.jpg", :alt => "Sample Image") %>
+

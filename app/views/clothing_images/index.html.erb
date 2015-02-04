@@ -2,13 +2,18 @@
 
 <table>
 <% @clothing_images.each do |clothing_image| %>
-<th>Shirt Front</th>
+<th>Image Title</th>
+<th>Image Key</th>
 
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    
-    <td class="list_image_name">
+    <td class="list_image_title">
       <dl>
-        <dt><%= clothing_image.image_name %></dt>
+        <dt><%= clothing_image.image_title %></dt>
+      </dl>
+    </td>
+    <td class="list_image_key">
+      <dl>
+        <dt><%= clothing_image.image_key %></dt>
       </dl>
     </td>
   

@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>Image name:</strong>
-  <%= @clothing_image.image_name %>
+  <strong>Image title:</strong>
+  <%= @clothing_image.image_title %>
+</p>
+
+<p>
+  <strong>Image key:</strong>
+  <%= @clothing_image.image_key %>
 </p>
 
 <%= link_to 'Edit', edit_clothing_image_path(@clothing_image) %> |

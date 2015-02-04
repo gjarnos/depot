@@ -5,6 +5,8 @@
 <th>product id</th>
 <th>Clothing Color id</th>
 <th>Clothing Size id</th>
+<th>Image front</th>
+<th>Image back</th>
 <th>Created at</th>
 <th>Updated at</th>
 <th>Quantity</th>
@@ -12,27 +14,27 @@
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td class="list_product_id">
       <dl>
-        <dt><%= categorization.product_id %></dt>
+        <dt><%= categorization.product.title %></dt>
       </dl>
     </td>
     <td class="list_clothing_color_id">
       <dl>
-        <dt><%= categorization.clothing_color_id %></dt>
+        <dt><%= categorization.clothing_color.shirt_color %></dt>
       </dl>
     </td>
     <td class="list_clothing_size_id">
       <dl>
-        <dt><%= categorization.clothing_size_id %></dt>
+        <dt><%= categorization.clothing_size.shirt_size %></dt>
       </dl>
     </td>
     <td class="list_shirt_image_front">
       <dl>
-        <dt><%= categorization.shirt_image_front %></dt>
+        <dt><%= categorization.shirt_image_front.image_title %></dt>
       </dl>
     </td>
     <td class="list_shirt_image_back">
       <dl>
-        <dt><%= categorization.shirt_image_back %></dt>
+        <dt><%= categorization.shirt_image_back.image_title %></dt>
       </dl>
     </td>
     <td class="list_created_at">

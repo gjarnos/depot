@@ -65,6 +65,7 @@ private
   end
 
   def categorization_params
-    params.require(:categorization).permit(:product_id, :clothing_size_id, :clothing_color_id, :quantity, :shirt_image_front, :shirt_image_back)
+    params.require(:categorization).permit(:product_id, :clothing_size_id, :clothing_color_id, :quantity, 
+      :shirt_image_front, :shirt_image_back, :shirt_image_front_id, :shirt_image_back_id, :front_images, :back_images, :clothing_size_ids, :clothing_size_id)
   end
 end

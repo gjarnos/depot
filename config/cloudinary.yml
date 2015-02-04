@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dixxoacph
+  api_key: '226439365683183'
+  api_secret: PL4qjht4rYetzyju6zpyRngavsY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dixxoacph
+  api_key: '226439365683183'
+  api_secret: PL4qjht4rYetzyju6zpyRngavsY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dixxoacph
+  api_key: '226439365683183'
+  api_secret: PL4qjht4rYetzyju6zpyRngavsY
+  enhance_image_tag: true
+  static_image_support: false

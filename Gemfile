@@ -14,6 +14,8 @@ gem 'database_cleaner'
 #gem 'sqlite3'
 gem 'pg'
 
+gem 'cloudinary'
+
 group :production do
   gem 'rails_12factor', '0.0.2'
 end

@@ -24,11 +24,11 @@
   </div>
 
   <div class="field">
-    <%= f.collection_select :shirt_image_front, ClothingImage.all, :image_name, :image_name, {prompt: "Image"} %>
+    <%= f.collection_select :shirt_image_front_id, ClothingImage.all, :id, :image_title, {prompt: "Image"} %>
   </div>
 
   <div class="field">
-    <%= f.collection_select :shirt_image_back, ClothingImage.all, :image_name, :image_name, {prompt: "Image"} %>
+    <%= f.collection_select :shirt_image_back_id, ClothingImage.all, :id, :image_title, {prompt: "Image"} %>
   </div>
 
   <div class="field">

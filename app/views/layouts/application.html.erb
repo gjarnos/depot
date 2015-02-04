@@ -36,7 +36,9 @@
         <ul>
           <li><%= link_to 'ORDERS',   orders_path   %></li>
           <li><%= link_to 'PRODUCTS', products_path %></li>
-          <li><%= link_to 'USERS',    users_path    %></li>
+          <% if @user.present? and @user.admin? %>
+            <li><%= link_to 'USERS',    users_path    %></li>
+          <% end %>
           <li><%= link_to 'SIZES',    clothing_sizes_path    %></li>
           <li><%= link_to 'COLOR',    clothing_colors_path    %></li>
           <li><%= link_to 'IMAGE',    clothing_images_path    %></li>

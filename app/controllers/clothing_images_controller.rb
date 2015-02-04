@@ -26,8 +26,15 @@ class ClothingImagesController < ApplicationController
   # POST /clothing_images.json
   def create
     @clothing_image = ClothingImage.new(clothing_image_params)
-
+    
     respond_to do |format|
+      
+      if clothing_image_params[:image_key].present?
+        preloaded = Cloudinary::PreloadedFile.new(clothing_image_params[:image_key])  
+        raise "Invalid upload signature" if !preloaded.valid?
+        @clothing_image.image_key = preloaded.filename
+      end
+
       if @clothing_image.save
         format.html { redirect_to @clothing_image,
           notice: 'Clothing image was successfully created.' }
@@ -75,6 +82,6 @@ private
   end
 
   def clothing_image_params
-    params.require(:clothing_image).permit(:image_name)
+    params.require(:clothing_image).permit(:image_key, :image_title)
   end
 end

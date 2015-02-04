@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    @user = User.find_by(id: session[:user_id]) if session[:user_id]
+    
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Your cart is empty"
       return
